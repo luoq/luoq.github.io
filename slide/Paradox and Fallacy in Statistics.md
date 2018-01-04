@@ -187,20 +187,42 @@ Is expectation what we only requires? Consider following gambles:
 
 $\Delta E(U) = \sum_{k=1}^\infty\frac{1}{2^k}\left[\ln(w + 2^{k-1} - c) - \ln(w)\right] \geq 0$
 
+### betting on unfair coin
+
+Betting on a unfair coin with 1:1 odd whose probability of head is $1>p>1/2$. 
+
+* If you bet 1 on head, you will get $2 p$ on average
+* Betting with all capital gives maximum expectation. But the probability of bankrupt is $1-p>0$
+* Betting $N$ times, using all capital each time gives maximum expectation. But the probability of bankrupt is $1-p^N\rightarrow \infty$.
+
+**kelly's formula** : maximize $\lim_{N\rightarrow \infty}(\prod_{i=1}^N r_i)^{1/N}$ or $\lim_{N\rightarrow \infty} \frac{1}{N} \log(r_i)$
+
+If $\exists i, r_i=0$, the loss is infinity. Avoid bankrupt.
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Binary_logarithm_plot_with_ticks.svg/300px-Binary_logarithm_plot_with_ticks.svg.png)
+
+Invest fixed ratio $l$, maximize $p \log(1+l)+(1-p)\log(1-l)$. $l=2 p-1$
+
 ### Ergodicity
 
 * Expectation: average in parallel universes
-* alternative: average in time
-* If they the same, the quantity is ergodic.
+* reinvest repeatedly: average in time
+* If they are the same, the quantity is **ergodic**.
 
 An example: invest at 1, rise to 1.5 or decrease to 0.6 with equal probability.
 
 * expectation 1.05: in parallel universe or repeat buying 1 many times
 * start with 1.0, reinvest all money repeatedly. $1/2(\log(1.5)+\log(0.6))\approx -0.0527$
 
-$(\prod_{i=1}^N r_i)^{1/N}, 1/N \sum_{i=1}^N \log(r_i)$
+
 
 ![](http://aip.scitation.org/na101/home/literatum/publisher/aip/journals/content/cha/2016/cha.2016.26.issue-2/1.4940236/production/images/medium/1.4940236.figures.f2.gif)
+
+### With external wealth
+
+From kelly's principle, you should not pay more than 1 for St.Petersburg offer to avoid bankrupt. At this situation the outcome is always positive.
+
+Consider external wealth $w$, the acceptable price is dependent on $w$.
 
 $\bar{g}=\sum_{k=1}^\infty 1/2^k (\log(w-c+2^{k-1})-\log(w))$
 
@@ -208,7 +230,7 @@ Requirement: $w-c+1>0$
 
 ![](http://rsta.royalsocietypublishing.org/content/roypta/369/1956/4913/F1.large.jpg?width=800&height=600&carousel=1)
 
-The acceptable cost is dependent on $w$.
+
 
 ## Shannon's demon
 
@@ -251,6 +273,6 @@ http://aip.scitation.org/doi/full/10.1063/1.4940236
 
 http://rsta.royalsocietypublishing.org/content/369/1956/4913
 
-### Shannon's demon
+### Shannon's demon, kelly's formula
 
 [Fortune's Formula: The Untold Story of the Scientific Betting System That Beat the Casinos and Wall Street](https://www.goodreads.com/book/show/186124.Fortune_s_Formula)
